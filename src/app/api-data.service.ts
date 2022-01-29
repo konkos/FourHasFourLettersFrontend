@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { APIResponse } from './models/APIResponse.model';
+import { ResultModel } from './models/APIResponse.model';
 
 
 @Injectable({
@@ -15,6 +15,6 @@ export class ApiDataService {
   getApiResult(userInput:Number){
     let tempUrl = this.url + `/${userInput}`
 
-    return this.http.post<APIResponse>(tempUrl,'')
+    return this.http.post<ResultModel[]>(tempUrl,'')
   }
 }

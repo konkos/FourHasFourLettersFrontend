@@ -1,4 +1,11 @@
 <div>
-    <input type="text" name="userInput" id="userInput" [(ngModel)]= "userInput" />
-    <button (click)="getChain()">Get Chain</button>
+    <div>
+        <input type="text" name="userInput" id="userInput" [(ngModel)]= "userInput" />
+        <button (click)="getChain()">Get Chain</button>
+    </div>
+
+
+    <ul *ngFor="let node of nodes">
+        <li>{{node.number}} ({{node.word}})</li>
+    </ul>
 </div>
