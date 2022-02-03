@@ -20,6 +20,7 @@ export class UserInputComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    fetch('https://four-has-four-letters.herokuapp.com').then(data => console.log(data))
   }
 
   getChain(){
