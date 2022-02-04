@@ -20,7 +20,7 @@ export class UserInputComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    fetch('https://four-has-four-letters.herokuapp.com').then(data => console.log(data))
+    fetch('https://four-has-four-letters.herokuapp.com').then(data => console.log(data)).catch((error) => alert(`server error try later. ${error}`))
   }
 
   getChain(){
@@ -33,7 +33,10 @@ export class UserInputComponent implements OnInit {
     console.log(`TO STRING : ${userInputString}`)
     let num = Number.parseInt(userInputString)
     let observable:Observable<ResultModel[]> = this.apiService.getApiResult(num)
-    observable.subscribe(data => this.nodes = data)
+    observable.subscribe(
+      data => this.nodes = data,
+      error => alert('OOPS something went wrong! Please try again.')
+      )
     observable.subscribe(data => console.log(`data.res : ${data}`))
 
   }

@@ -5,7 +5,7 @@
     </div>
   
     <div id="graph">        
-        <div class="node" id='{{node.word}}' *ngFor="let node of nodes">
+        <div class="node" id='{{node.word}}' *ngFor="let node of nodes" #{{node.word}}>
             {{node.number}} ({{node.word}}) 
         </div>
     </div>
